@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<phpunit>
+<phpunit processIsolation="false" strict="false" backupGlobals="false" backupStaticAttributes="false" stopOnError="false" stopOnFailure="false" stopOnSkipped="false" stopOnIncomplete="false">
   <testsuites>
     <testsuite name="New Suite">
       <directory>tests</directory>
       <file>tests\StringTests.php</file>
     </testsuite>
   </testsuites>
+  <php/>
 </phpunit>

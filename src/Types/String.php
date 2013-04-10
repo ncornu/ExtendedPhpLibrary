@@ -1,16 +1,21 @@
 <?php
-  class String //extends SplType
+  class EPLString //extends SplType
   {
       protected $string;
       
-      public function __construct(string $string)
+      public function __construct($string)
       {
           $this->string = $string;
       }
       
       public function toUpper()
       {
-          return ucfirst($this->string);
+          return strtoupper($this->string);
+      }
+      
+      public function startWith($string)
+      {
+          return strpos($this->string, $string) == 0;
       }
   }
 ?>

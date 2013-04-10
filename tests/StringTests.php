@@ -1,6 +1,6 @@
 <?php
-
-require_once('../src/Types/String.php');
+require_once 'C:\Users\Nic\AppData\Roaming\PEAR\pear\PHPUnit/Autoload.php';
+require_once('C:\Users\Nic\Desktop\ExtendedPhpLibrary\src\Types\String.php');
 
   class StringTest extends PHPUnit_Framework_TestCase
   {
@@ -11,8 +11,14 @@ require_once('../src/Types/String.php');
       
       public function testToUpper()
       {
-          $s = new String("abc");
-          $this->assertAreEqual("ABC", $s->toUpper());
+          $s = new EPLString((string)"abc");
+          $this->assertEquals("ABC", $s->toUpper());
+      }
+      
+      public function testStartWith()
+      {
+          $s = new EPLString((string)"abcd");
+          $this->assertEquals(true, $s->startWith("abc"));
       }
   }
 ?>
