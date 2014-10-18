@@ -1,6 +1,6 @@
 <?php
-require_once 'C:\Users\Nic\AppData\Roaming\PEAR\pear\PHPUnit/Autoload.php';
-require_once('C:\Users\Nic\Desktop\ExtendedPhpLibrary\src\Types\String.php');
+
+require_once(__DIR__ . '\..\src\Types\String.php');
 
   class StringTest extends PHPUnit_Framework_TestCase
   {
@@ -19,6 +19,24 @@ require_once('C:\Users\Nic\Desktop\ExtendedPhpLibrary\src\Types\String.php');
       {
           $s = new EPLString((string)"abcd");
           $this->assertEquals(true, $s->startWith("abc"));
+      }
+      
+      public function testStartWithNot()
+      {
+          $s = new EPLString((string)"ab");
+          $this->assertEquals(false, $s->startWith("abc"));
+      }
+      
+      public function testContain()
+      {
+          $s = new EPLString((string)"abcd");
+          $this->assertEquals(true, $s->contain("abc"));
+      }
+      
+      public function testContainNot()
+      {
+          $s = new EPLString((string)"ab");
+          $this->assertEquals(false, $s->contain("abc"));
       }
   }
 ?>

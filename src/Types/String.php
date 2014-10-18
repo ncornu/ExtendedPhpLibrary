@@ -15,7 +15,12 @@
       
       public function startWith($string)
       {
-          return strpos($this->string, $string) == 0;
+          return strpos($this->string, $string) === 0;
+      }
+      
+      public function contain($string)
+      {
+          return strpos($this->string, $string) !== false;
       }
   }
 ?>
